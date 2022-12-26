@@ -1,0 +1,17 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+serv_obj=Service("C:\DRIVERS\chromedriver_win32\chromedriver_exe")
+driver=webdriver.Chrome(service=serv_obj)
+driver.get("https://opensource-demo.orangehrmlive.com")
+driver.maximize_window()
+driver.find_element(By.NAME,"username").send_keys("Admin")
+driver.find_element(By.NAME,"password").send_keys("admin123")
+driver.find_element(By.XPATH,"//a[@class='oxd-main-menu-item active toggle']").click()
+driver.find_element(By.XPATH,"//header[@class='oxd-topbar']//li[3]").click()
+driver.find_element(By.XPATH,"//a[normalize-space()='Employee List']").click()
+driver.find_element(By.NAME,"firstName").send_keys("Arun")
+driver.find_element(By.NAME,"lastName").send_keys("prasath")
+driver.find_element(By.CSS_SELECTOR,"input.oxd-input oxd-input--active").send_keys("0279")
+driver.find_element(By.XPATH,"//button[normalize-space()='Save']").click()
+driver.close()
