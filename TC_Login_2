@@ -9,7 +9,6 @@ driver.maximize_window()
 
 driver.find_element(By.NAME,"username").send_keys("Admin")
 driver.find_element(By.NAME,"password").send_keys("invalid")
-searchbox=driver.find_element(By.XPATH,"//button[normalize-space()='Login")
-print(searchbox.is_displayed())
+driver.find_element(By.XPATH,"//button[@type='submit']").click()
 
 driver.close()
